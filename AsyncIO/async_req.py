@@ -2,8 +2,6 @@ import asyncio
 import aiohttp
 import time
 
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
 async def fetchfromGoogle():
     url = 'https://www.google.com'
     session = aiohttp.ClientSession()
@@ -15,7 +13,7 @@ async def main():
     print(time.strftime('%X'))
     await asyncio.gather(
         *[
-            fetchfromGoogle() for  _ in range(20)
+            fetchfromGoogle() for  _ in range(200)
         ]
     )
     print(time.strftime('%X'))

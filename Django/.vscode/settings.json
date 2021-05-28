@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.formatting.provider": "yapf",
+    "[html]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnSave": true
+    }
+}

@@ -1,0 +1,22 @@
+{% extends 'HelloWorld/base.html' %}
+    {% block body %}
+        {% include 'HelloWorld/navbar.html' %}
+        <div class="container">
+            <h1>HDSC</h1>
+            <ul class="collection">
+                {% for member in members %}
+                <li class="{% cycle 'bold' '' %} collection-item">{{ member }}</li>
+                {% endfor %}
+            </ul>
+            {% if show_developer %}
+            <span>Developed By: {{ developer }}</span>
+            {% endif %}
+        </div>
+    {% endblock %}
+    {% block head %}
+        <style>
+            .bold{
+                font-weight: 900;
+            }
+        </style>
+    {% endblock %}

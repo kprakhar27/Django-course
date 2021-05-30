@@ -1,0 +1,15 @@
+{
+    "NAME": "Kumar Prakhar",
+    "ABOUT_ME": "This is ME, Kumar Prakhar, a second year undergraduate from Vellore Institute of Technology, Bhopal. I am a budding Data Scientist and a Web Designer, who is obsessed with the idea of improving himself and wants a platform to grow and excel.",
+    "LANGUAGES": [
+        "Python",
+        "Java",
+        "C++",
+        "JavaScript"
+    ],
+    "PROJECTS": [
+        ["filter_drama", "Google", "Lorem ipsum dolor, sit amet consectetur"],
+        ["place", "Microsoft", "Lorem ipsum dolor, sit amet consectetur"],
+        ["whatshot", "Apple", "Lorem ipsum dolor, sit amet consectetur"]
+    ]
+}

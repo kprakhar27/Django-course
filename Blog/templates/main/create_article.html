@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+
+    {% block content %} 
+    {% include 'main/nav.html' %}
+    <div class="container">
+        <h1 class="center-align">Create New Article</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-field col s6">
+                <input type="text" name="title" placeholder="Article Title" />
+                <label for="first_name">Article Title</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" name="content" placeholder="Write content here..."></textarea>
+                <label for="textarea1">Textarea</label>
+            </div>
+            <div class="input-field col s12">
+                <select name="author">
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for author in authors %}
+                        <option value="{{ author.id }}">{{ author.name }}</option>
+                    {% endfor %}
+                </select>
+                <label>Select Author</label>
+            </div>
+            <br><br>
+            <button class="waves-effect waves-light btn" type="submit">Submit</button>
+            <button class="waves-effect waves-light btn" type="reset">Reset</button>
+            <br><br>
+            {% if success %}
+            <div class="chip">
+                Article Submitted
+                <i class="close material-icons">close</i>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+    {% endblock %}
+    {% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.chips');
+            var instances = M.Chips.init(elems, options);
+        });
+    </script>
+    {% endblock %}
